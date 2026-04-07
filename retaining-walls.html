@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Retaining Wall Contractor in Scottsdale, AZ | Diamond West Civil</title>
   <meta name="description" content="Engineered retaining walls for residential and commercial projects in Scottsdale. Structural integrity guaranteed. Veteran-owned. Request a free estimate.">
-  <meta name="robots" content="noindex, follow">
+  <meta name="robots" content="index, follow">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Retaining Wall Contractor in Scottsdale, AZ | Diamond West Civil">
@@ -14,6 +14,7 @@
 
   <!-- Preload -->
   <link rel="preload" href="css/styles.css" as="style">
+  <link rel="preload" href="assets/images/retaining-wall.jpg" as="image" fetchpriority="high">
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
 
   <!-- Styles -->
@@ -42,7 +43,7 @@
       </a>
       <div class="header-cta">
         <a href="tel:+1XXXXXXXXXX" class="header-phone">(XXX) XXX-XXXX</a>
-        <a href="#estimate" class="btn btn--primary btn--small">Free Estimate</a>
+        <a href="#estimate" class="btn btn--primary btn--small">Request a Bid</a>
       </div>
     </div>
   </header>
@@ -52,12 +53,12 @@
     <div class="container">
       <div class="hero__content">
         <h1>Retaining Wall Contractor in Scottsdale, AZ</h1>
-        <p>Engineered retaining walls for residential and commercial projects. Structural integrity and long-term performance backed by veteran-owned discipline.</p>
+        <p>Engineered retaining wall systems for residential, commercial, and infrastructure projects. Built for structural integrity, proper drainage, and long-term performance.</p>
       </div>
       <div class="hero__form" id="estimate">
         <div class="form-card">
-          <h3>Get a Free Estimate</h3>
-          <p>Tell us about your project and we'll get back to you within 24 hours.</p>
+          <h3>Request a Bid</h3>
+          <p>Tell us about your project and timeline. Our team will follow up within 24 hours to review scope and next steps.</p>
           <form class="lead-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
             <input type="text" name="_gotcha" style="display:none">
             <input type="hidden" name="_next" value="/thank-you.html">
@@ -65,40 +66,53 @@
             <div class="form-row">
               <div class="form-group">
                 <label for="name">Full Name *</label>
-                <input type="text" id="name" name="name" placeholder="Full Name" required>
+                <input type="text" id="name" name="name" required>
                 <span class="error-message"></span>
               </div>
               <div class="form-group">
+                <label for="company">Company Name</label>
+                <input type="text" id="company" name="company">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
                 <label for="phone">Phone *</label>
-                <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                <input type="tel" id="phone" name="phone" required>
+                <span class="error-message"></span>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
                 <span class="error-message"></span>
               </div>
             </div>
-            <div class="form-group">
-              <label for="email">Email Address *</label>
-              <input type="email" id="email" name="email" placeholder="Email Address" required>
-              <span class="error-message"></span>
-            </div>
-            <div class="form-group">
-              <label for="project_type">Project Type *</label>
-              <select id="project_type" name="project_type" required>
-                <option value="">Select a service</option>
-                <option value="Site Prep">Site Preparation</option>
-                <option value="Grading">Grading</option>
-                <option value="Retaining Wall" selected>Retaining Wall</option>
-                <option value="Other">Other</option>
-              </select>
-              <span class="error-message"></span>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="project_type">Project Type *</label>
+                <select id="project_type" name="project_type" required>
+                  <option value="" disabled>Select a service</option>
+                  <option value="Site Preparation">Site Preparation</option>
+                  <option value="Grading">Grading</option>
+                  <option value="Retaining Wall" selected>Retaining Wall</option>
+                  <option value="Excavation">Excavation</option>
+                  <option value="Other">Other</option>
+                </select>
+                <span class="error-message"></span>
+              </div>
+              <div class="form-group form-group--optional">
+                <label for="timeline">Estimated Timeline</label>
+                <input type="text" id="timeline" name="timeline" placeholder="e.g. 2 weeks, ASAP">
+              </div>
             </div>
             <div class="form-group form-group--optional">
               <label for="location">Project Location</label>
-              <input type="text" id="location" name="location" placeholder="Project Location">
+              <input type="text" id="location" name="location" placeholder="e.g. Scottsdale, AZ">
             </div>
             <div class="form-group form-group--optional">
-              <label for="timeline">Estimated Timeline</label>
-              <input type="text" id="timeline" name="timeline" placeholder="e.g. 2 weeks, ASAP">
+              <label for="scope">Project Scope / Details</label>
+              <textarea id="scope" name="scope" rows="2" placeholder="Briefly describe your project or scope. Plans can be shared after we connect."></textarea>
             </div>
-            <button type="submit" class="btn btn--primary btn--full">Request a Free Estimate</button>
+            <button type="submit" class="btn btn--primary btn--full">Submit Project Details</button>
             <p class="form-privacy">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1C8.676 1 6 3.676 6 7v2H4v14h16V9h-2V7c0-3.324-2.676-6-6-6zm0 2c2.276 0 4 1.724 4 4v2H8V7c0-2.276 1.724-4 4-4zm-6 8h12v10H6V11z"/></svg>
               Your information is secure. We never share your data.
@@ -136,8 +150,8 @@
     <div class="container">
       <div class="service-detail">
         <div class="service-detail__info">
-          <h2>Retaining Walls Built to Last</h2>
-          <p>Diamond West Civil builds retaining walls engineered for Scottsdale's terrain and soil conditions. From small residential walls to large commercial structures, we deliver walls that hold.</p>
+          <h2>Retaining Walls Built for Structural Performance</h2>
+          <p>Diamond West Civil builds retaining walls engineered for Scottsdale's soil conditions, load requirements, and long-term structural performance. From small residential walls to large commercial structures, we deliver walls that hold.</p>
           <h3>What We Do</h3>
           <ul class="service-list">
             <li>
@@ -169,7 +183,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
               Who We Serve
             </h3>
-            <p>Contractors and developers needing structural retaining walls for residential lots, commercial developments, and infrastructure projects in Scottsdale.</p>
+            <p>Contractors, developers, and municipalities requiring structural retaining wall systems for residential, commercial, and infrastructure projects.</p>
           </div>
           <div class="service-detail__card">
             <h3>
@@ -187,8 +201,8 @@
   <section class="section section--alt">
     <div class="container">
       <div class="section-header text-center" style="max-width: 800px;">
-        <h2>A Retaining Wall Is Only as Good as Who Builds It</h2>
-        <p>Cutting corners on retaining walls leads to structural failure, property damage, and liability. The desert soil in Scottsdale shifts and expands. Your wall needs to be engineered for it, not just stacked. Diamond West Civil builds walls that perform for the long term.</p>
+        <h2>Poorly Built Retaining Walls Lead to Failure</h2>
+        <p>Cutting corners on retaining walls leads to structural failure, property damage, and liability. The desert soil in Scottsdale shifts and expands. Retaining walls must be engineered for load, drainage, and soil movement, not just installed. Diamond West Civil builds walls that perform for the long term.</p>
       </div>
     </div>
   </section>
@@ -212,7 +226,7 @@
         </div>
         <div class="step">
           <div class="step__number">3</div>
-          <h3>Detailed Estimate</h3>
+          <h3>Detailed Bid</h3>
           <p>You get a clear, line-item estimate with no hidden costs and no surprises.</p>
         </div>
         <div class="step">
@@ -228,8 +242,8 @@
   <section class="cta-section">
     <div class="container">
       <h2>Need a Retaining Wall Built Right?</h2>
-      <p>Get a free estimate from Scottsdale's experienced retaining wall contractor.</p>
-      <a href="#estimate" class="btn btn--primary">Request a Free Estimate</a>
+      <p>Request a bid for your retaining wall project from Scottsdale's experienced contractor.</p>
+      <a href="#estimate" class="btn btn--primary">Submit Project Details</a>
     </div>
   </section>
 
@@ -283,7 +297,7 @@
   <!-- Mobile Sticky CTA -->
   <div class="mobile-cta">
     <a href="tel:+1XXXXXXXXXX" class="btn btn--secondary btn--small">Call Now</a>
-    <a href="#estimate" class="btn btn--primary btn--small">Free Estimate</a>
+    <a href="#estimate" class="btn btn--primary btn--small">Request a Bid</a>
   </div>
 
   <!-- Footer -->
@@ -311,6 +325,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
