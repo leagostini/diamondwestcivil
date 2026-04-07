@@ -637,9 +637,11 @@ h1, h2, h3 {
   padding: 24px 28px;
 }
 
-.form-card h3 {
+.form-card h3,
+.form-card .form-title {
   margin-bottom: 2px;
   font-size: 1.25rem;
+  font: var(--font-h3);
 }
 
 .form-card > p {
