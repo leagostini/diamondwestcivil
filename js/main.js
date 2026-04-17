@@ -109,10 +109,13 @@
       });
     });
 
-    // Submit validation
+    // Submit: validate, then send via AJAX so we can redirect to our own
+    // thank-you page (Formspree free tier ignores the _next field and
+    // otherwise shows its own hosted confirmation page).
     form.addEventListener('submit', function (e) {
-      var valid = true;
+      e.preventDefault();
 
+      var valid = true;
       Object.keys(fields).forEach(function (key) {
         var field = fields[key];
         if (!field.el) return;
@@ -123,10 +126,39 @@
           clearError(field);
         }
       });
+      if (!valid) return;
 
-      if (!valid) {
-        e.preventDefault();
+      var submitBtn = form.querySelector('button[type="submit"]');
+      var originalText = submitBtn ? submitBtn.textContent : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
       }
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(function (response) {
+          if (response.ok) {
+            window.location.href = '/thank-you.html';
+          } else {
+            return response.json().then(function (data) {
+              var msg = data && data.errors && data.errors.length
+                ? data.errors.map(function (err) { return err.message; }).join(', ')
+                : 'Submission failed';
+              throw new Error(msg);
+            });
+          }
+        })
+        .catch(function () {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+          }
+          alert('Sorry, something went wrong. Please try again or call us at (623) 271-0384.');
+        });
     });
   }
 
