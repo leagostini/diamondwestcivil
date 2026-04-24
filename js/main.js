@@ -157,7 +157,7 @@
             submitBtn.disabled = false;
             submitBtn.textContent = originalText;
           }
-          alert('Sorry, something went wrong. Please try again or call us at (623) 271-0384.');
+          alert('Sorry, something went wrong. Please try again or call us at (480) 865-3311.');
         });
     });
   }
